@@ -35,8 +35,8 @@ Then clear the cache. This will tell the Extra to look for the files located
 in these directories, allowing you to develop outside of the MODx webroot!
 
 It is necessary to activate the plug-in 
-msOptionColorPlugin/core/components/msoptioncolorplugin/controllers/msPlugin/index.phpMiniShop2, 
-as it work as described here 
+msOptionColorPlugin/core/components/msoptioncolorplugin/controllers/msPlugin/index.php
+MiniShop2, as it work as described here 
 https://docs.modx.pro/components/minishop2/development/plug-ins-products
 
 ## Information
