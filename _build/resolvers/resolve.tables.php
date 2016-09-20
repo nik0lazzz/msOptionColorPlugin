@@ -13,7 +13,7 @@ if ($transport->xpdo) {
             $modx->addPackage('msoptioncolorplugin', $modelPath);
 
             $manager = $modx->getManager();
-            $objects = array();
+            $objects = array('msOptionColorPluginItem');
             $schemaFile = MODX_CORE_PATH . 'components/msoptioncolorplugin/model/schema/msoptioncolorplugin.mysql.schema.xml';
             if (is_file($schemaFile)) {
                 $schema = new SimpleXMLElement($schemaFile, 0, true);
