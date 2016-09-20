@@ -23,12 +23,7 @@ msOptionColorPlugin.grid.Items = function (config) {
             enableRowBody: true,
             autoFill: true,
             showPreview: true,
-            scrollOffset: 0,
-            getRowClass: function (rec) {
-                return !rec.data.active
-                    ? 'msoptioncolorplugin-grid-row-disabled'
-                    : '';
-            }
+            scrollOffset: 0
         },
         paging: true,
         remoteSort: true,
@@ -201,6 +196,11 @@ Ext.extend(msOptionColorPlugin.grid.Items, MODx.grid.Grid, {
             dataIndex: 'color',
             sortable: false,
             width: 250,
+            renderer:  function (value, cell, row) {
+                //noinspection CssInvalidPropertyValue
+                return String.format('<span style="display:inline-block;                margin-right: 4px;width:60px;height:10px;background-color:#{0}"></span>{1}', row.data['color'], value)
+
+            },
         }, {
             header: _('msoptioncolorplugin_grid_actions'),
             dataIndex: 'actions',

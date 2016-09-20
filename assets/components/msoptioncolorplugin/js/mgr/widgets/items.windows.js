@@ -22,6 +22,14 @@ Ext.extend(msOptionColorPlugin.window.CreateItem, MODx.Window, {
 
     getFields: function (config) {
         return [{
+            xtype: 'hidden',
+            name: 'id',
+            id: config.id + '-id',
+        },{
+            xtype: 'hidden',
+            name: 'color',
+            id: config.id + '-color'
+        },{
             xtype: 'textfield',
             fieldLabel: _('msoptioncolorplugin_item_name'),
             name: 'name',
@@ -29,12 +37,18 @@ Ext.extend(msOptionColorPlugin.window.CreateItem, MODx.Window, {
             anchor: '99%',
             allowBlank: false,
         }, {
-            xtype: 'textarea',
-            fieldLabel: _('msoptioncolorplugin_item_color'),
-            name: 'description',
-            id: config.id + '-description',
-            height: 150,
-            anchor: '99%'
+            xtype: 'colorpalette', fieldLabel: _('color'),
+            id: config.id + '-color-palette',
+            listeners: {
+                select: function (palette, color) {
+                    Ext.getCmp(config.id + '-color').setValue(color)
+                },
+                beforerender: function (palette) {
+                    if (config.record['color'] != undefined) {
+                        palette.value = config.record['color'];
+                    }
+                }
+            },
         }];
     },
 
@@ -72,7 +86,11 @@ Ext.extend(msOptionColorPlugin.window.UpdateItem, MODx.Window, {
             xtype: 'hidden',
             name: 'id',
             id: config.id + '-id',
-        }, {
+        },{
+            xtype: 'hidden',
+            name: 'color',
+            id: config.id + '-color'
+        },{
             xtype: 'textfield',
             fieldLabel: _('msoptioncolorplugin_item_name'),
             name: 'name',
@@ -80,17 +98,18 @@ Ext.extend(msOptionColorPlugin.window.UpdateItem, MODx.Window, {
             anchor: '99%',
             allowBlank: false,
         }, {
-            xtype: 'textarea',
-            fieldLabel: _('msoptioncolorplugin_item_description'),
-            name: 'description',
-            id: config.id + '-description',
-            anchor: '99%',
-            height: 150,
-        }, {
-            xtype: 'xcheckbox',
-            boxLabel: _('msoptioncolorplugin_item_active'),
-            name: 'active',
-            id: config.id + '-active',
+            xtype: 'colorpalette', fieldLabel: _('color'),
+            id: config.id + '-color-palette',
+            listeners: {
+                select: function (palette, color) {
+                    Ext.getCmp(config.id + '-color').setValue(color)
+                },
+                beforerender: function (palette) {
+                    if (config.record['color'] != undefined) {
+                        palette.value = config.record['color'];
+                    }
+                }
+            },
         }];
     },
 

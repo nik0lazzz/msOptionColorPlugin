@@ -65,28 +65,6 @@ class msOptionColorPluginItemGetListProcessor extends modObjectGetListProcessor
             'menu' => true,
         );
 
-        if (!$array['active']) {
-            $array['actions'][] = array(
-                'cls' => '',
-                'icon' => 'icon icon-power-off action-green',
-                'title' => $this->modx->lexicon('msoptioncolorplugin_item_enable'),
-                'multiple' => $this->modx->lexicon('msoptioncolorplugin_items_enable'),
-                'action' => 'enableItem',
-                'button' => true,
-                'menu' => true,
-            );
-        } else {
-            $array['actions'][] = array(
-                'cls' => '',
-                'icon' => 'icon icon-power-off action-gray',
-                'title' => $this->modx->lexicon('msoptioncolorplugin_item_disable'),
-                'multiple' => $this->modx->lexicon('msoptioncolorplugin_items_disable'),
-                'action' => 'disableItem',
-                'button' => true,
-                'menu' => true,
-            );
-        }
-
         // Remove
         $array['actions'][] = array(
             'cls' => '',
