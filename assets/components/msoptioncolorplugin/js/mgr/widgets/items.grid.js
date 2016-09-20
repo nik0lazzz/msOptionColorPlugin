@@ -182,7 +182,7 @@ Ext.extend(msOptionColorPlugin.grid.Items, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'name', 'description', 'active', 'actions'];
+        return ['id', 'name', 'color','actions'];
     },
 
     getColumns: function () {
@@ -197,16 +197,10 @@ Ext.extend(msOptionColorPlugin.grid.Items, MODx.grid.Grid, {
             sortable: true,
             width: 200,
         }, {
-            header: _('msoptioncolorplugin_item_description'),
-            dataIndex: 'description',
+            header: _('msoptioncolorplugin_item_color'),
+            dataIndex: 'color',
             sortable: false,
             width: 250,
-        }, {
-            header: _('msoptioncolorplugin_item_active'),
-            dataIndex: 'active',
-            renderer: msOptionColorPlugin.utils.renderBoolean,
-            sortable: true,
-            width: 100,
         }, {
             header: _('msoptioncolorplugin_grid_actions'),
             dataIndex: 'actions',

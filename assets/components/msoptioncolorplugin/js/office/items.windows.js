@@ -36,17 +36,11 @@ Ext.extend(msOptionColorPlugin.window.CreateItem, MODx.Window, {
         }, {
             xtype: 'textarea',
             fieldLabel: _('msoptioncolorplugin_item_description'),
-            name: 'description',
+            name: 'color',
             id: config.id + '-description',
             height: 150,
             anchor: '99%'
-        }, {
-            xtype: 'xcheckbox',
-            boxLabel: _('msoptioncolorplugin_item_active'),
-            name: 'active',
-            id: config.id + '-active',
-            checked: true,
-        }];
+        },];
     },
 
     getKeys: function (config) {

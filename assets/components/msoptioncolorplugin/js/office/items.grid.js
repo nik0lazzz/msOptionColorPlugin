@@ -166,7 +166,7 @@ Ext.extend(msOptionColorPlugin.grid.Items, OfficeExt.grid.Default, {
     },
 
     getFields: function (config) {
-        return ['id', 'name', 'description', 'active', 'actions'];
+        return ['id', 'name', 'color', 'actions'];
     },
 
     getColumns: function (config) {
@@ -182,15 +182,9 @@ Ext.extend(msOptionColorPlugin.grid.Items, OfficeExt.grid.Default, {
             width: 200,
         }, {
             header: _('msoptioncolorplugin_item_description'),
-            dataIndex: 'description',
+            dataIndex: 'color',
             sortable: false,
             width: 250,
-        }, {
-            header: _('msoptioncolorplugin_item_active'),
-            dataIndex: 'active',
-            renderer: OfficeExt.utils.renderBoolean,
-            sortable: true,
-            width: 100,
         }, {
             header: _('msoptioncolorplugin_grid_actions'),
             dataIndex: 'actions',
