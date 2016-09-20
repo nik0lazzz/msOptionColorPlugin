@@ -1,5 +1,5 @@
 <?php
-zxc
+
 return array(
     'fields' => array(
         'color' => null,

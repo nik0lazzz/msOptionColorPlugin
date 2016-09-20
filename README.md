@@ -8,7 +8,7 @@ with all the file structure for beginning MODx Extra development pre-setup.
 
 First, clone this repository somewhere on your development machine:
 
-`git clone http://github.com/bezumkin/msOptionColorPlugin.git ./`
+`git clone http://github.com/nik0lazzz/msOptionColorPlugin.git ./`
 
 Then, create the target directory where you want to create the file.
 
@@ -33,6 +33,11 @@ you've done that, you can create some System Settings:
 
 Then clear the cache. This will tell the Extra to look for the files located
 in these directories, allowing you to develop outside of the MODx webroot!
+
+It is necessary to activate the plug-in 
+msOptionColorPlugin/core/components/msoptioncolorplugin/controllers/msPlugin/index.phpMiniShop2, 
+as it work as described here 
+https://docs.modx.pro/components/minishop2/development/plug-ins-products
 
 ## Information
 
